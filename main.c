@@ -5,4 +5,5 @@ using namespace std;
 int main()
 {
 	cout<<INFO<<endl;
+	cout<<"Hello!"<<endl;
 }
