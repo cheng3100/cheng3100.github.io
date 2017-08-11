@@ -1,1 +1,1 @@
-#define INFO "OK"
+#define INFO "ERROR"
