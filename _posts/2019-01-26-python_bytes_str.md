@@ -75,7 +75,9 @@ bytes类型的解析可以分为两类，一类是解析为数字类型，一类
 |s|ascii码，s前带数字表示个数|
 
 更多详细fmt的用法可用`help(strcut)`
+
 - 例子
+
 ```python
 import struct
 
@@ -86,12 +88,12 @@ for i in a:
     print(hex(i)) # 0x1 0x102 0x1020304
 ```
 
-
 ## bytes解析为文本
 
 文本最终是属于某一种字符集的，ascii码是一种最常见的字符集，而为了表示汉字等还有utf-8以及unicode等字符集，从bytes解析到文本常用两种方法
 
 - decode方法(通用)
+
 ```python
 
 b = b'\x61\x62'
