@@ -3,6 +3,7 @@ layout: post
 author: chenglong
 title: ubuntu启动失败黑屏解决方案
 ---
+[test]({% link _posts/2019-01-23-welcome-to-jekyll.markdown %})
 # 现象
 启动直接进入黑屏，左上角有光标但不闪烁，ctrl+alt+fx也无法进入命令行界面
 
@@ -14,14 +15,14 @@ title: ubuntu启动失败黑屏解决方案
 尝试了很多网上的方法，包括进入grub后按e改磁盘ro为rw啊，进入recovery模式该grub配置啊等等都无效，后来发现这种操作后就恢复正常了，即进入recovery模式后执行软件包升级和恢复即可，具体如下
 
 - 进入grub模式
-一旦启动后，在有读条的时候按住左shitf键即可，注意一定要赶在在启动一开始时，另外虚拟机的情况下要注意按键前用鼠标点击屏幕进入虚拟机，否则识别为虚拟机外部的输入，进入后如图
-![220adcf44871a77a3a565b407ec14b3b.png]({{ site.url}}/_pic/2019-01-30/1.png)
+一旦启动后，在有读条的时候按住左shitf键即可，注意一定要赶在在启动一开始时，另外虚拟机的情况下要注意按键前用鼠标点击屏幕进入虚拟机，否则识别为虚拟机外部的输入，进入后如图  
+![220adcf44871a77a3a565b407ec14b3b.png](/pic/2019-01-30/1.png)
 
 - 进入recovery模式
-grup中选择Advanced模式进入如下状态
-![5da8b6d10ec62857dccfedeb89286f6d.png](({{ site.url}}/_pic/2019-01-30/2.png)
-每个人显示可能会略有不同，但只要选择后面带有 recovery mode即可进入，如下
-![5da8b6d10ec62857dccfedeb89286f6d.png](({{ site.url}}/_pic/2019-01-30/3.png)
+grup中选择Advanced模式进入如下状态  
+![5da8b6d10ec62857dccfedeb89286f6d.png](/pic/2019-01-30/2.png)
+每个人显示可能会略有不同，但只要选择后面带有 recovery mode即可进入，如下  
+![5da8b6d10ec62857dccfedeb89286f6d.png](/pic/2019-01-30/3.png)
 
 - 配置为读写模式并以root登陆
 出问题时一般会发现上图中recovery菜单中文件系统时只读的，此时只要选中“network”选项就会使能网络并改为读写模式，接着再选择“root”选项就可以root登陆
