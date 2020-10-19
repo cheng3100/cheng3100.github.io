@@ -131,9 +131,9 @@ comments_provider: gitalk
 # https://github.com/gitalk/gitalk#install
 gitalk:
     owner: cheng3100
-    repo: blog_temp
-    clientID: b1dee860e1a25470628b
-    clientSecret: 15aac6456707497eafbebb2e842d2e7af41f6b90
+    repo: cheng3100.github.io
+    clientID: 0183037d5a029d0bbe5f
+    clientSecret: a2946ade8c1e9616865e9aad1590b53b9554bce2
 # 在使用其它评论组件时可点击显示 Disqus
 lazy_load_disqus : false
 
