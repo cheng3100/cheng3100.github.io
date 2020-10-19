@@ -2,7 +2,8 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: https://longcheng.zone
+url:
+# url: https://longcheng.zone
 date_format: "ordinal"
 title: My Blog
 subtitle: "龙城"
@@ -93,7 +94,7 @@ paginate: 10
 lsi: false
 quiet: false
 # excerpt_separator: "\n\n"
-excerpt_separator: "======"
+excerpt_separator: '<!-- abs -->'
 permalink: /:year/:month/:day/:title/
 plugins:
     - jekyll-github-metadata

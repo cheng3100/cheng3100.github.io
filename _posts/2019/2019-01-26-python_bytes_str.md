@@ -9,7 +9,7 @@ keywords: python, byte, struct, str, int
 
 # bytes类型解释
 python中的bytes类型可以类比为C中的uint8型数组，本质就是顺序排列的8bit二进制数字，例如以二进制方式从文件中读取时返回的就是bytes类型，或以b前缀的字符串也是bytes类型，如
-======
+<!-- abs -->
 
 ``` python
  a = b'abcd'
