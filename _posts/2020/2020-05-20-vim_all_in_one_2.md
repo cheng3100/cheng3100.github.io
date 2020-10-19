@@ -8,7 +8,6 @@ keywords: vim, ide
 ---  
 
 # 4 vim with plugin  
-
 vim 一大扩展方式是使用插件，所谓插件其实还是一系列vim脚本，但以一种便于管理的形式组织了起来，其中用于管理插件的本身就是一种插件，插件管理插件比较常用的是`vundle`  
 
 ## 4.1 vundle框架  

@@ -2,13 +2,16 @@
 layout: post  
 author: chenglong  
 title: wlan 架构层次  
+categories: [wlan, linux driver]
+description: wlan 架构层次 
+keywords: wlan, host, wifi, linux driver
 ---  
 [TOC]  
 
 # 1. wlan 设备层次架构  
+对wlan host和firmware的架构从整体上做了一个整理。
 
 ## 1.1 host-device架构  
-
 用于手机或者其他cpu性能较强场景，模块上划分为host和device，中间通过usb/sdio等总线连接  
 
 ![image-20200509165357413](/pic/2020/05/image-20200509165357413.png)  
