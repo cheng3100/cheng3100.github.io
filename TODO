@@ -1,0 +1,37 @@
+feature
+=======
+
+# comment
+
+- [x] clean all non-self content. only template file is need.
+- [x] how to set up comment
+- [x] comment account setting
+
+# theme
+
+- [ ] ~~how to switch theme, figure out the dependence.~~
+- [ ] ~~which part of theme can be customed.~~
+- [ ] ~~setting the special effect on some page like 404.html~~
+
+# content
+
+- [x] where the blog file be put to.
+- [x] where picture is saved. -- by using vim plugin "md-img-paste"
+- [ ] move blogs to here.
+
+# traffic
+
+- [x] visitors number record
+- [x] pages views number record
+
+# access
+
+- [x] custom domain.
+
+# debug
+
+- [ ] install local jekyll environment and debug at local.
+
+# Advertisement
+
+- [ ] Learn about major advertising platform, choose one like google adv and set to the blog site.
