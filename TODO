@@ -40,4 +40,6 @@ feature
 Bug
 ===
 
-- [ ] some blog's abstract is too long in the index page.
+- [x] some blog's abstract is too long in the index page.
+
+modify the `excerpt_separator` not to '\n\n'.
