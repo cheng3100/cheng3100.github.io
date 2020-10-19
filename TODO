@@ -17,7 +17,7 @@ feature
 
 - [x] where the blog file be put to.
 - [x] where picture is saved. -- by using vim plugin "md-img-paste"
-- [ ] move blogs to here.
+- [x] move blogs to here.
 
 # traffic
 
@@ -30,8 +30,14 @@ feature
 
 # debug
 
-- [ ] install local jekyll environment and debug at local.
+- [x] install local jekyll environment and debug at local.
 
 # Advertisement
 
 - [ ] Learn about major advertising platform, choose one like google adv and set to the blog site.
+
+
+Bug
+===
+
+- [ ] some blog's abstract is too long in the index page.
