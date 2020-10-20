@@ -18,7 +18,7 @@ bilibili: 龙城X
 
 The origin theme is based on the [Yummy-jekyll](https://github.com/DONGChuan/Yummy-Jekyll) by [DONGChuna](https://dongchuan.github.io).
 
-[Zhuang Ma](https://github.com/mzlogin) expanded its influence, at the same time, I alse got the first information from him.
+[Zhuang Ma](https://github.com/mzlogin) expanded its influence, at the same time, I also got the first information from him.
 
 
 Thanks!
