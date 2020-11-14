@@ -9,7 +9,7 @@ keywords: ubuntu, battery drain, suspend
 
 最近在新买的thinkpad x13 amd版本上安装了ubuntu20.10, kernel verison 5.8, 所有功能基本正常，但发现合盖后休眠状态耗电稍高，大概一个晚上会耗电15%左右，这样休眠状态大概只能放置两天多，而我另外一台thinkpad t490s intel版本大概只有4~5%左右，经过一些研究后基本解决这个问题，目前休眠一天大概耗电3%左右,基本待机放置一两周都没有问题。
 
-<!-- abs -- >
+<!-- abs -->
 
 # linux suspend mode
 
@@ -91,6 +91,6 @@ Nov 13 01:06:49 cheng-ThinkPad-X13-Gen-1 systemd[1]: Finished Hibernate
 但这里会有个问题，就是放置笔记本一段时间后的延迟自动休眠仍然是调用的`systemd-suspend`服务，而不是`systemd-hybrid-suspend`服务，这里我采取的方法是通过调用`service systemd-suspend status` 找到suspend服务的配置文件，然后删除这个文件，定义一个软链接到systemd-hybrid-suspend服务的配置文件，也就是将所有的suspend模式都变为hybyrid-suspend模式即可。
 
 
-[^1] [linux document of suspend mode](https://www.kernel.org/doc/html/v4.15/admin-guide/pm/sleep-states.html)
-[^2] [laptop suspend mode](https://longcheng.zone/2020/11/14/ubuntu_suspend/)
-[^3] [ubuntu enable hibernate by swap file](https://askubuntu.com/questions/6769/hibernate-and-resume-from-a-swap-file)
+[^1]: [linux document of suspend mode](https://www.kernel.org/doc/html/v4.15/admin-guide/pm/sleep-states.html)
+[^2]: [laptop suspend mode](https://longcheng.zone/2020/11/14/ubuntu_suspend/)
+[^3]: [ubuntu enable hibernate by swap file](https://askubuntu.com/questions/6769/hibernate-and-resume-from-a-swap-file)

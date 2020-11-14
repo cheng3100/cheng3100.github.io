@@ -9,8 +9,13 @@ keywords: keyword1, keyword2
 
 Abstract
 
-<!-- abs -- >
+<!-- abs -->
+
+
+this is ref[^1]
 
 > the excerpt_separator var in _config.yml setting the symbol of abstract
 
 Content here
+
+[^1]: [ref](website)
