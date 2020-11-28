@@ -46,7 +46,7 @@ Startup file是系统启动后最开始进入的代码，按照不同习惯可�
 +   ------------        ----------|---  +
 ++++++++++++++++++++++++++++++++++|++++++
                                   |
-	  |----------------------------
+      |----------------------------
       |
 +++++++++++++        jtag  ++++++++++++++++
 +  Debugger + <===========>+ arm borad    +
@@ -85,4 +85,4 @@ Startup file是系统启动后最开始进入的代码，按照不同习惯可�
 
 [^1]: [armdbg](https://github.com/cheng3100/armdbg)
 [^2]: [arm-none-eabi-gcc download](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads)
-[
+[^3]: [pyOCD](https://github.com/pyocd/pyOCD)
