@@ -6,10 +6,13 @@ layout: default
 
 This is my personal tech blog where I share tutorials, guides, and thoughts on technology.
 
-## Recent Posts
+**Links:** [👤 About](/about/) | [⭐ GitHub](https://github.com/{{ site.github_username }})
 
-{% for post in site.posts %}
-- [{{ post.title }}]({{ post.url }}) - {{ post.date | date: "%B %d, %Y" }}
+## All Posts
+
+{% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+{% for post in sorted_posts %}
+- {{ post.date | date: "%Y-%m-%d" }} - [{{ post.title }}]({{ post.url }})
 {% endfor %}
 
 ---
