@@ -20,6 +20,7 @@
 
 title: My Tech Blog
 email: your-email@example.com
+author: chenglong
 description: >- # this means to ignore newlines until "baseurl:"
   This is my tech blog. Including wlan driver, mac80211, etc.
 baseurl: "" # the subpath of your site, e.g. /blog

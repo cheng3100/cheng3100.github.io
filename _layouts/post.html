@@ -69,8 +69,33 @@ layout: default
     <!-- Main Content -->
     <div class="post-content">
       <header class="post-header">
-        <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+        {% assign post_title = page.title %}
+        {% unless post_title %}
+          {% comment %} Derive title from filename (format: YYYY-MM-DD-title.md) {% endcomment %}
+          {% assign filename = page.name | remove: '.md' | remove: '.markdown' %}
+          {% comment %} Remove date prefix (YYYY-MM-DD-) by splitting and taking parts after index 2 {% endcomment %}
+          {% assign parts = filename | split: '-' %}
+          {% if parts.size >= 4 %}
+            {% assign title_str = '' %}
+            {% for part in parts %}
+              {% assign idx = forloop.index0 %}
+              {% if idx >= 3 %}
+                {% if title_str == '' %}
+                  {% assign title_str = part %}
+                {% else %}
+                  {% assign title_str = title_str | append: ' ' | append: part %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+            {% assign post_title = title_str | capitalize %}
+          {% else %}
+            {% assign post_title = filename | replace: '-', ' ' | capitalize %}
+          {% endif %}
+        {% endunless %}
+        <h1 class="post-title p-name" itemprop="name headline">{{ post_title | escape }}</h1>
         <p class="post-meta">
+          {% assign post_author = page.author | default: site.author %}
+          {% if post_author %}<span class="post-author">By {{ post_author }}</span> | {% endif %}
           <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
             {{ page.date | date: "%B %d, %Y" }}
           </time>
