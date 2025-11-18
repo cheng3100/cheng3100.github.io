@@ -1,67 +1,95 @@
 ---
 layout: default
 ---
+<style>
+/* Inline styles to ensure toggle button is always visible - Small square */
+#sidebar-toggle {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: fixed !important;
+  bottom: 20px !important;
+  left: 20px !important;
+  z-index: 9999 !important;
+  background-color: rgba(88, 96, 105, 0.9) !important;
+  color: #fff !important;
+  border: 1px solid rgba(88, 96, 105, 0.5) !important;
+  border-radius: 8px !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  font-size: 18px !important;
+  font-weight: normal !important;
+  line-height: 1 !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important;
+  margin: 0 !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  max-width: 44px !important;
+  max-height: 44px !important;
+  text-align: center !important;
+  font-family: Arial, sans-serif !important;
+  backdrop-filter: blur(10px) !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+</style>
 
-{% assign assets_base_url = site.url %}
-{% if site.cdn.jsdelivr.enabled %}
-{% assign assets_base_url = "https://cdn.jsdelivr.net/gh/" | append: site.repository | append: '@master' %}
-{% endif %}
-<section class="collection-head small geopattern" data-pattern-id="{{ page.title | truncate: 15, ''}}">
-<div class="container">
-  <div class="columns">
-    <div class="column three-fourths">
-      <div class="collection-title">
-        <h1 class="collection-header">{{ page.title }}</h1>
-        <div class="collection-info">
-          {% if page.date %}
-          <span class="meta-info">
-            <span class="octicon octicon-calendar"></span> {{ page.date | date: "%Y/%m/%d" }}
-          </span>
-          {% endif %}
-          {% for cat in page.categories %}
-          <span class="meta-info">
-            <span class="octicon octicon-file-directory"></span>
-            <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
-          </span>
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <!-- Toggle Button - Small square, bottom-left corner -->
+  <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar" title="Toggle sidebar" style="display: flex !important; visibility: visible !important; opacity: 1 !important; position: fixed !important; bottom: 20px !important; left: 20px !important; z-index: 9999 !important; background-color: rgba(88, 96, 105, 0.9) !important; color: #fff !important; border: 1px solid rgba(88, 96, 105, 0.5) !important; border-radius: 8px !important; padding: 0 !important; cursor: pointer !important; font-size: 18px !important; font-weight: normal !important; line-height: 1 !important; box-shadow: 0 2px 6px rgba(0,0,0,0.15) !important; margin: 0 !important; width: 44px !important; height: 44px !important; min-width: 44px !important; min-height: 44px !important; max-width: 44px !important; max-height: 44px !important; text-align: center !important; font-family: Arial, sans-serif !important; backdrop-filter: blur(10px) !important; align-items: center !important; justify-content: center !important; box-sizing: border-box !important;">☰</button>
+  
+  <div class="post-container">
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-content">
+        <h3>Table of Contents</h3>
+        <nav id="toc" class="toc"></nav>
+        <hr>
+        <h3>Recent Posts</h3>
+        <ul class="recent-posts">
+          {% for post in site.posts limit:5 %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
           {% endfor %}
-          {% if site.word_count.enabled %}
-          <span class="meta-info">
-            <span class="octicon octicon-clock"></span>
-            共 {{ page.content | strip_html | strip_newlines | remove: " " | size }} 字，约 {{ page.content | strip_html | strip_newlines | remove: " " | size | divided_by: 350 | plus: 1 }} 分钟
-          </span>
+        </ul>
+        <hr>
+        <h3>Tags</h3>
+        <div class="post-tags">
+          {% if page.tags %}
+            {% for tag in page.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
           {% endif %}
         </div>
       </div>
-    </div>
-    <div class="column one-fourths mobile-hidden">
-      <div class="collection-title">
-        {% include sidebar-qrcode.html %}
+    </aside>
+
+    <!-- Main Content -->
+    <div class="post-content">
+      <header class="post-header">
+        <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+        <p class="post-meta">
+          <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+            {{ page.date | date: "%B %d, %Y" }}
+          </time>
+        </p>
+      </header>
+
+      <div class="post-body e-content" itemprop="articleBody">
+        {{ content }}
       </div>
+
+      <footer class="post-footer">
+        <a href="/">← Back to Home</a>
+      </footer>
     </div>
   </div>
-</div>
-</section>
-<!-- / .banner -->
-<section class="container content">
-<div class="columns">
-  <div class="column three-fourths" >
-    {% include content-header-ad.html %}
-    <article class="article-content markdown-body">
-    {{ content }}
-    {% include copyright.html %}
-    </article>
-    <div class="share">
-      {% include sns-share.html %}
-    </div>
-    {% include content-footer-ad.html %}
-    <div class="comment">
-      {% include comments.html %}
-    </div>
-  </div>
-  <div class="column one-fourth">
-    {% include sidebar-search.html %}
-    {% include sidebar-post-nav.html %}
-  </div>
-</div>
-</section>
-<!-- /section.content -->
+</article>
+
+<!-- Custom Markdown Styles -->
+<link rel="stylesheet" href="/assets/css/markdown-custom.css">
+<link rel="stylesheet" href="/assets/css/sidebar.css">
+<script src="/assets/js/sidebar.js"></script>
+<script src="/assets/js/toc.js"></script>
