@@ -100,6 +100,18 @@ layout: default
             {{ page.date | date: "%B %d, %Y" }}
           </time>
         </p>
+        {% if page.header_numbering != nil %}
+        <meta name="header-numbering" content="{{ page.header_numbering }}">
+        {% endif %}
+        {% if page.header_numbering_style != nil %}
+        <meta name="header-numbering-style" content="{{ page.header_numbering_style }}">
+        {% endif %}
+        {% if site.header_numbering != nil %}
+        <meta name="site-header-numbering" content="{{ site.header_numbering }}">
+        {% endif %}
+        {% if site.header_numbering_style != nil %}
+        <meta name="header-numbering-style" content="{{ site.header_numbering_style }}">
+        {% endif %}
       </header>
 
       <div class="post-body e-content" itemprop="articleBody">
@@ -160,3 +172,4 @@ layout: default
 </script>
 <script src="/assets/js/sidebar.js"></script>
 <script src="/assets/js/toc.js"></script>
+<script src="/assets/js/header-numbering.js"></script>

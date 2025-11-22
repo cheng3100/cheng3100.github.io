@@ -338,3 +338,19 @@
   max-width: 100%;
   height: auto;
 }
+
+/* ============================================
+   HEADER NUMBERING
+   ============================================ */
+
+.post-body h1.numbered .header-number,
+.post-body h2.numbered .header-number,
+.post-body h3.numbered .header-number,
+.post-body h4.numbered .header-number,
+.post-body h5.numbered .header-number,
+.post-body h6.numbered .header-number {
+  color: hsl(205, 60%, 50%);
+  font-weight: 600;
+  margin-right: 0.3em;
+  user-select: none;
+}

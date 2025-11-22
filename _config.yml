@@ -35,6 +35,12 @@ permalink: /:year/:month/:day/:title.html
 plugins:
   - jekyll-feed
 
+# Header numbering settings (site-wide)
+# Set to true to enable automatic header numbering for all posts
+# Individual posts can override this with header_numbering: false in front matter
+header_numbering: true  # true/false - enable/disable site-wide
+header_numbering_style: nested  # nested (1.1.1) or flat (1, 2, 3)
+
 # Include _pic/ directory for images
 # Note: Directories starting with _ are copied to output without the underscore
 # So _pic/ becomes pic/ in the built site
