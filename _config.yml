@@ -48,7 +48,7 @@ include:
   - _pic
 
 exclude:
-  - _posts/2025-11-13-markdown-styling-guide.md
+  - _posts/2025/2025-11-18-jekyll-101-guide.md
 
   # - _posts/drafts/
 # Exclude from processing.
