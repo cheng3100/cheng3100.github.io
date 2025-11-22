@@ -116,5 +116,47 @@ layout: default
 <!-- Custom Markdown Styles -->
 <link rel="stylesheet" href="/assets/css/markdown-custom.css">
 <link rel="stylesheet" href="/assets/css/sidebar.css">
+<!-- Mermaid.js for diagram support -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  
+  // Initialize Mermaid configuration
+  mermaid.initialize({ 
+    startOnLoad: true,
+    theme: 'default',
+    securityLevel: 'loose',
+    flowchart: {
+      useMaxWidth: true,
+      htmlLabels: true,
+      curve: 'basis'
+    }
+  });
+  
+  // Make mermaid available globally for the init script
+  window.mermaid = mermaid;
+  
+  // Convert code blocks to mermaid divs after DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    const mermaidCodeBlocks = document.querySelectorAll('code.language-mermaid, pre code.language-mermaid');
+    
+    mermaidCodeBlocks.forEach(function(codeBlock) {
+      const preElement = codeBlock.parentElement;
+      const mermaidCode = codeBlock.textContent;
+      
+      const mermaidDiv = document.createElement('div');
+      mermaidDiv.className = 'mermaid';
+      mermaidDiv.textContent = mermaidCode;
+      
+      if (preElement && preElement.tagName === 'PRE') {
+        preElement.replaceWith(mermaidDiv);
+      } else {
+        codeBlock.replaceWith(mermaidDiv);
+      }
+    });
+    
+    // Run Mermaid to render diagrams
+    mermaid.run();
+  });
+</script>
 <script src="/assets/js/sidebar.js"></script>
 <script src="/assets/js/toc.js"></script>
