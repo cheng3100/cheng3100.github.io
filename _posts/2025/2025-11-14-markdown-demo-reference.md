@@ -766,6 +766,46 @@ header_numbering: false
 - Works with all header levels (H1-H6)
 
 ---
+
+## Hiding Blog Posts
+
+You can hide blog posts from appearing in listings (like the index page) while keeping them accessible via direct URL.
+
+### Method 1: Hide Individual Post
+
+Add `published: false` to the post's front matter:
+
+```yaml
+---
+layout: post
+title: "My Draft Post"
+date: 2025-11-14
+published: false
+---
+```
+
+**Note:** The post will still be accessible via direct URL, but won't appear in `site.posts` collections or listings.
+
+### Method 2: Hide Posts Site-Wide
+
+Add posts to the `exclude` list in `_config.yml`:
+
+```yaml
+exclude:
+  - _posts/2025-11-14-draft-post.md
+  - _posts/drafts/
+```
+
+**Note:** Excluded posts won't be processed by Jekyll at all and won't be accessible via URL.
+
+### Tips
+
+- Use `published: false` for drafts you want to keep accessible but hidden from listings
+- Use `exclude` in `_config.yml` for posts you don't want processed at all
+- You can exclude entire directories (e.g., `_posts/drafts/`) or specific files
+- Excluded files won't appear in any collections or be built by Jekyll
+
+---
 ## Summary
 
 This demo page showcases:
